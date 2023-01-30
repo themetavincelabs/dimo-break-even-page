@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DIMO Dapp</title>
+    <script>
+      function costBasis()
+        {
+          var numOne, numTwo, product, dimoPrice, product;
+          numOne = parseInt(document.getElementById("miner").value);
+          numTwo = parseInt(document.getElementById("cost").value);
+          dimoPrice = parseInt(document.getElementById("dimoPrice").value);
+          product = numOne * numTwo;
+          payback = (product / dimoPrice);
+          document.getElementById("totalCost").value = product;
+          document.getElementById("breakEven").value = payback;
+        }
+    </script>
+  </head>
+
+
+
+  <body>
+    <div align="center">
+      <h2>DIMO Miner Payback Calculation</h2>
+      <script src="https://crypto.com/price/static/widget/index.js"></script> 
+        <div id="crypto-widget-CoinList" data-design="classic" data-coin-ids="14576"></div>
+        
+        <p>Input the DIMO token price: <input id="dimoPrice"></p>
+        <p>How many miners do you have: <input id="miner"></p>
+        <p>How much did they cost: <input id="cost"></p>
+        <button onclick="costBasis()">Submit</button>
+        
+        <p>Total Cost = <input id="totalCost"></p>
+        <p>You need this many tokens to break even: = <input id="breakEven"></p>
+    </div>
+  <p>To do: Have DIMO price be fetched via Coingeko API</p>
+  <p>To do: Show a graph via matplot lib of break even $</p>  
+
+  </body>
+</html>
